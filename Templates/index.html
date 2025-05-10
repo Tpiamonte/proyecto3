@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" href="/static/images/icono.png" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{url_for('static', filename='css/styles.css')}}"
+    />
+    <title>Test de Personalidad</title>
+  </head>
+  <body>
+    <header>
+      <!-- Menu -->
+      <nav>
+        <ul>
+          <li><a href="{{ url_for('home') }}">Inicio</a></li>
+          <li><a href="{{ url_for('formulario') }}">Test</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div>
+          <h1>Bienvenido al Laberinto de la Identidad</h1>
+          <p style="text-align: center">
+            Embárcate en un test de personalidad diseñado para explorar los
+            aspectos clave de tu vida. En cada pregunta encontrarás la
+            oportunidad de descubrir tu verdadera esencia. ¡Atrévete a conocer
+            quién eres realmente! A lo largo de este recorrido, te acompañaremos
+            paso a paso en un viaje íntimo y revelador. Nuestro objetivo es
+            ayudarte a descubrir no solo las respuestas que buscas, sino también
+            a conectarte con la esencia auténtica que te define.
+          </p>
+        </div>
+        <div class="galeria">
+          <div id="img1">
+            <img src="/static/images/Arquitecto.png" alt="Arquitecto" />
+            <p class="descripcion">
+              Arquitecto – Visionario estratégico y lógico
+            </p>
+          </div>
+          <div id="img3">
+            <img src="/static/images/Lógico.png" alt="Lógico" />
+            <p class="descripcion">Lógico – Curioso, analítico e ingenioso</p>
+          </div>
+          <div id="img4">
+            <img src="/static/images/Comandante.png" alt="Comandante" />
+            <p class="descripcion">Comandante – Líder audaz y decidido</p>
+          </div>
+          <div id="img5">
+            <img src="/static/images/Innovador.png" alt="Innovador" />
+            <p class="descripcion">
+              Innovador – Creativo, energético y sociable
+            </p>
+          </div>
+          <div id="img6">
+            <img src="/static/images/Abogado.png" alt="Abogado" />
+            <p class="descripcion">
+              Abogado – Idealista y decidido a cambiar el mundo
+            </p>
+          </div>
+          <div id="img7">
+            <img src="/static/images/Mediador.png" alt="Mediador" />
+            <p class="descripcion">Mediador – Soñador empático y poético</p>
+          </div>
+          <div id="img8">
+            <img src="/static/images/Protagonista.png" alt="Protagonista" />
+            <p class="descripcion">
+              Protagonista – Líder carismático e inspirador
+            </p>
+          </div>
+          <div id="img19">
+            <img src="/static/images/Activista.png" alt="Ejecutivo" />
+            <p class="descripcion">
+              Activista – Organizado y directo, amante del orden
+            </p>
+          </div>
+          <div id="img9">
+            <img src="/static/images/Logista.png" alt="Logista" />
+            <p class="descripcion">Logista – Práctico, confiable y metódico</p>
+          </div>
+          <div id="img10">
+            <img src="/static/images/Defensor.png" alt="Defensor" />
+            <p class="descripcion">Defensor – Protector leal y servicial</p>
+          </div>
+          <div id="img11">
+            <img src="/static/images/Ejecutivo.png" alt="Ejecutivo" />
+            <p class="descripcion">
+              Ejecutivo – Organizado y directo, amante del orden
+            </p>
+          </div>
+          <div id="img12">
+            <img src="/static/images/Cónsul.png" alt="Cónsul" />
+            <p class="descripcion">
+              Cónsul – Sociable, leal y atento a los demás
+            </p>
+          </div>
+          <div id="img13">
+            <img src="/static/images/Virtuoso.png" alt="Virtuoso" />
+            <p class="descripcion">
+              Virtuoso – Experimentador práctico e independiente
+            </p>
+          </div>
+          <div id="img14">
+            <img src="/static/images/Aventurero.png" alt="Aventurero" />
+            <p class="descripcion">
+              Aventurero – Artístico, flexible y espontáneo
+            </p>
+          </div>
+          <div id="img15">
+            <img src="/static/images/Emprendedor.png" alt="Emprendedor" />
+            <p class="descripcion">Emprendedor – Energético, audaz y activo</p>
+          </div>
+          <div id="img16">
+            <img src="/static/images/Animador.png" alt="Animador" />
+            <p class="descripcion">
+              Animador – Divertido, entusiasta y sociable
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2>Aca algunos datos de nuestros usuarios</h2>
+          <!-- Aca irian tablas mostrando datos de la personalidad de la gente-->
+        </div>
+
+        <!-- ==========================Graficas=================================== -->
+        <section class="graficos" id="contenedorResultados">
+          <p style="text-align: center">
+            Selecciona algun tipo de grafica para ver su analisis
+          </p>
+          <div class="botones-centrados">
+            <button id="graficaDe1" onclick="mostrarGrafica1()">
+              Analisis segun la edad
+            </button>
+            <button id="graficaDe2" onclick="mostrarGrafica2()">
+              Analisis segun el genero
+            </button>
+            <button id="graficaDe3" onclick="mostrarGrafica3()">
+              Analisis segun los intereses
+            </button>
+          </div>
+          <div id="contenedorGraficas">
+            <div id="contenedorGrafica1" class="grafica">
+              <h1>¿Qué tipo MBTI eres según tu edad?🧓👶</h1>
+              <p>
+                Aunque la personalidad se forma temprano, los años pueden
+                matizar cómo nos expresamos. Aquí van algunas tendencias
+                interesantes por grupo de edad:
+              </p>
+              <h4>🔹Jóvenes (18–24 años)</h4>
+              <ul>
+                <li>
+                  Domina la imaginación: INFP, ENFP y ENTP son los más comunes.
+                  Se caracterizan por la creatividad, el idealismo y la
+                  espontaneidad
+                </li>
+                <li>
+                  Es una etapa de exploración personal y búsqueda de identidad,
+                  lo que podría explicar el predominio de tipos más abiertos y
+                  flexibles
+                </li>
+              </ul>
+              <h4>🔹Adultos (25–44 años)</h4>
+              <ul>
+                <li>
+                  Aparece el equilibrio: Aunque los tipos soñadores siguen
+                  presentes, comienzan a destacar perfiles más estructurados
+                  como ESTJ, ISTJ y ESFJ
+                </li>
+                <li>
+                  Esto coincide con una etapa de vida marcada por el trabajo, la
+                  familia y mayores responsabilidades
+                </li>
+              </ul>
+              <h4>Mayores de 45 años</h4>
+              <ul>
+                <li>
+                  Predomina la estabilidad: Tipos como ISTJ e ISFJ ganan
+                  terreno. Estas personalidades valoran la organización, la
+                  fiabilidad y el deber.
+                </li>
+                <li>
+                  Puede reflejar una preferencia por la rutina, la experiencia
+                  práctica y la planificación a largo plazo.
+                </li>
+              </ul>
+
+              <div class="curious-card1">
+                <strong>🧠 Dato curioso:</strong> Los tipos “raros” como
+                <strong>INTJ</strong> e <strong>INFJ</strong> mantienen una
+                proporción bastante estable en todas las edades. Como si fueran
+                los sabios silenciosos que observan desde las sombras… sin
+                importar cuántos años pasen
+              </div>
+
+              <div class="picture-container">
+                <picture>
+                  <img
+                    src="/static/images/grafico1.png"
+                    alt="Imagen que muestra el resultado del test"
+                    class="zoomable"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div id="contenedorGrafica2" class="grafica">
+              <h1>¿Tu tipo MBTI depende de si eres hombre o mujer?🚻</h1>
+              <p>
+                La personalidad no tiene género, pero en esta muestra se
+                observan algunas tendencias interesantes:
+              </p>
+              <h4>👨 Hombres:</h4>
+              <p>
+                INTP, INFP, INTJ, ENTP: Estos tipos, centrados en la lógica, la
+                innovación y la independencia, tienen mayor representación
+                masculina.
+              </p>
+              <p>
+                También sobresalen en ISTP y ESTP, tipos más orientados a la
+                acción y resolución práctica de problemas.
+              </p>
+              <p></p>
+              <h4>👩 Mujeres:</h4>
+              <p>
+                ISFJ, ESFJ, ENFJ, ISFP: Son más frecuentes en mujeres y se
+                caracterizan por un fuerte sentido social, cooperación y cuidado
+                interpersonal.
+              </p>
+              <p>
+                También hay una buena representación en ESFP y ENFP, tipos con
+                energía social, creatividad y entusiasmo
+              </p>
+              <div class="curious-card2">
+                <strong>💡 Dato curioso:</strong> El tipo ENTJ (líder nato) es
+                más común en mujeres que en hombres en esta muestra. ¡Girlboss
+                en acción!
+              </div>
+              <picture>
+                <img
+                  src="/static/images/grafico2.png"
+                  alt="Imagen que muestra el resultado del test"
+                  class="zoomable"
+                />
+              </picture>
+            </div>
+            <div id="contenedorGrafica3" class="grafica">
+              <h1>
+                ¿Qué tipo MBTI predomina según tus intereses y nivel
+                educativo?🎓📚
+              </h1>
+
+              <p>
+                Aunque el MBTI no determina qué estudiarás ni qué tan lejos
+                llegarás académicamente, sí se observan tendencias según los
+                intereses personales y el nivel educativo alcanzado. Aquí un
+                vistazo comparativo:
+              </p>
+
+              <h4>🧠 Intereses personales</h4>
+
+              <ul>
+                <li>
+                  <strong>Ciencias (naturales, exactas, computación):</strong>
+                  Ganan los tipos intuitivos y analíticos como INTP, INTJ y
+                  ISTJ. Son perfiles que disfrutan resolver problemas complejos
+                  y pensar de forma lógica y estructurada.
+                </li>
+                <li>
+                  <strong>Humanidades y arte: INFP</strong>, INFJ y ENFP dominan
+                  esta categoría. Se trata de tipos creativos, introspectivos y
+                  sensibles a la expresión emocional y estética
+                </li>
+                <li>
+                  <strong>Negocios y economía:</strong>Aquí destacan ENTJ, ESTJ
+                  y ESFJ. Son tipos más orientados a la organización, el
+                  liderazgo y la eficiencia práctica.
+                </li>
+                <li>
+                  <strong>Social y salud:</strong> Tipos como ISFJ, ESFJ y ENFJ
+                  son comunes. Son personalidades empáticas, cuidadoras y
+                  orientadas al bienestar ajeno.
+                </li>
+                <li>
+                  <strong>Técnico o práctico (manualidades, oficios): </strong
+                  >ISTP, ESTP y ESFP aparecen con más frecuencia. Prefieren
+                  aprender haciendo, con foco en la acción y la experiencia
+                  concreta.
+                </li>
+              </ul>
+
+              <h4>🎓 Nivel educativo alcanzado</h4>
+
+              <ul>
+                <li>
+                  <strong>Pregrado</strong> Los tipos más comunes en este grupo
+                  incluyen ENFP, INFP, ESFJ e ISTJ. Se mezclan personalidades
+                  creativas y sociables con otras prácticas y organizadas.
+                </li>
+                <li>
+                  <strong>Posgrado</strong> Tipos como INTJ, INFJ, ENTJ e INTP
+                  son los más frecuentes. Son personalidades introspectivas, con
+                  gran disciplina mental y gusto por los retos intelectuales.
+                </li>
+              </ul>
+
+              <ul>
+                <li>
+                  Menos comunes pero consistentes: Aunque numéricamente menos
+                  personas acceden a posgrados, estos tipos se repiten con
+                  frecuencia en diferentes disciplinas.
+                </li>
+              </ul>
+
+              <div class="curious-card3">
+                <strong>🎯 Curioso: </strong> El tipo INTJ destaca
+                significativamente en posgrado. No son los más numerosos en
+                general, pero sí tienden a avanzar más en educación formal. La
+                categoría "Unknown" tiene montones de todos los tipos. Tal vez
+                representa a los que no siguen el camino tradicional… o
+                simplemente no llenaron el formulario bien 😒
+              </div>
+
+          
+
+              <picture>
+                <img
+                  src="/static/images/grafico3.png"
+                  alt="Imagen que muestra el resultado del test"
+                  class="zoomable"
+                />
+              </picture>
+              
+            </div>
+          </div>
+        </section>
+        <br />
+        <br />
+        <br />
+
+        <a href="{{ url_for('formulario') }}">
+          <button class="botones" type="button">Ir al Test</button>
+        </a>
+      </div>
+    </main>
+    <footer>
+      &copy; 🚀Desarrolladores: <br />JuanMa A. - Vicky P. - Tomas P. - Alvaro C.
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+      <div id="modal" class="modal">
+    <span class="cerrar">&times;</span>
+    <img class="modal-contenido" id="img-ampliada" />
+  </div>
+
+  </body>
+</html>
